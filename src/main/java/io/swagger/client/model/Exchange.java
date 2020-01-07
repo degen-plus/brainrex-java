@@ -25,30 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The text object takes any string of text.
+ * Exchange
  */
-@ApiModel(description = "The text object takes any string of text.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
-public class Text {
-  @SerializedName("text")
-  private String text = null;
+public class Exchange {
+  @SerializedName("exchange")
+  private String exchange = null;
 
-  public Text text(String text) {
-    this.text = text;
+  public Exchange exchange(String exchange) {
+    this.exchange = exchange;
     return this;
   }
 
    /**
-   * String of text or document to be analyzed
-   * @return text
+   * Name of the digital asset exchange to get data from
+   * @return exchange
   **/
-  @ApiModelProperty(value = "String of text or document to be analyzed")
-  public String getText() {
-    return text;
+  @ApiModelProperty(example = "binance", value = "Name of the digital asset exchange to get data from")
+  public String getExchange() {
+    return exchange;
   }
 
-  public void setText(String text) {
-    this.text = text;
+  public void setExchange(String exchange) {
+    this.exchange = exchange;
   }
 
 
@@ -60,22 +59,22 @@ public class Text {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Text text = (Text) o;
-    return Objects.equals(this.text, text.text);
+    Exchange exchange = (Exchange) o;
+    return Objects.equals(this.exchange, exchange.exchange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(exchange);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Text {\n");
+    sb.append("class Exchange {\n");
     
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
     sb.append("}");
     return sb.toString();
   }

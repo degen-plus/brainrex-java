@@ -15,42 +15,15 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import io.swagger.client.model.OHCLV;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * The text object takes any string of text.
+ * CandleResponse
  */
-@ApiModel(description = "The text object takes any string of text.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
-public class Text {
-  @SerializedName("text")
-  private String text = null;
-
-  public Text text(String text) {
-    this.text = text;
-    return this;
-  }
-
-   /**
-   * String of text or document to be analyzed
-   * @return text
-  **/
-  @ApiModelProperty(value = "String of text or document to be analyzed")
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
-
+public class CandleResponse extends ArrayList<OHCLV> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,22 +33,20 @@ public class Text {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Text text = (Text) o;
-    return Objects.equals(this.text, text.text);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(super.hashCode());
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Text {\n");
-    
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("class CandleResponse {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -5,7 +5,7 @@
     <artifactId>swagger-java-client</artifactId>
     <packaging>jar</packaging>
     <name>swagger-java-client</name>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>
@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>Swagger</name>
-            <email>apiteam@swagger.io</email>
-            <organization>Swagger</organization>
-            <organizationUrl>http://swagger.io</organizationUrl>
+            <name>Gonzalo Astorga</name>
+            <email>gonzalo@brainrex.com</email>
+            <organization>Brainrex Ltd</organization>
+            <organizationUrl>brainrex.com</organizationUrl>
         </developer>
     </developers>
 

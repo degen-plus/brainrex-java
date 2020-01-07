@@ -23,32 +23,53 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.OffsetDateTime;
 
 /**
- * The text object takes any string of text.
+ * PointTimeSeries
  */
-@ApiModel(description = "The text object takes any string of text.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
-public class Text {
-  @SerializedName("text")
-  private String text = null;
+public class PointTimeSeries {
+  @SerializedName("timestamp")
+  private OffsetDateTime timestamp = null;
 
-  public Text text(String text) {
-    this.text = text;
+  @SerializedName("value")
+  private Float value = null;
+
+  public PointTimeSeries timestamp(OffsetDateTime timestamp) {
+    this.timestamp = timestamp;
     return this;
   }
 
    /**
-   * String of text or document to be analyzed
-   * @return text
+   * Timestamp in datetime format
+   * @return timestamp
   **/
-  @ApiModelProperty(value = "String of text or document to be analyzed")
-  public String getText() {
-    return text;
+  @ApiModelProperty(example = "2012-01-01T20:30:43Z", value = "Timestamp in datetime format")
+  public OffsetDateTime getTimestamp() {
+    return timestamp;
   }
 
-  public void setText(String text) {
-    this.text = text;
+  public void setTimestamp(OffsetDateTime timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public PointTimeSeries value(Float value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * Value of the time series point
+   * @return value
+  **/
+  @ApiModelProperty(example = "453.32", value = "Value of the time series point")
+  public Float getValue() {
+    return value;
+  }
+
+  public void setValue(Float value) {
+    this.value = value;
   }
 
 
@@ -60,22 +81,24 @@ public class Text {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Text text = (Text) o;
-    return Objects.equals(this.text, text.text);
+    PointTimeSeries pointTimeSeries = (PointTimeSeries) o;
+    return Objects.equals(this.timestamp, pointTimeSeries.timestamp) &&
+        Objects.equals(this.value, pointTimeSeries.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(timestamp, value);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Text {\n");
+    sb.append("class PointTimeSeries {\n");
     
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

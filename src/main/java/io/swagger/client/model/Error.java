@@ -25,30 +25,71 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The text object takes any string of text.
+ * Error
  */
-@ApiModel(description = "The text object takes any string of text.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
-public class Text {
-  @SerializedName("text")
-  private String text = null;
+public class Error {
+  @SerializedName("code")
+  private Integer code = null;
 
-  public Text text(String text) {
-    this.text = text;
+  @SerializedName("message")
+  private String message = null;
+
+  @SerializedName("fields")
+  private String fields = null;
+
+  public Error code(Integer code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * String of text or document to be analyzed
-   * @return text
+   * Get code
+   * @return code
   **/
-  @ApiModelProperty(value = "String of text or document to be analyzed")
-  public String getText() {
-    return text;
+  @ApiModelProperty(example = "401", value = "")
+  public Integer getCode() {
+    return code;
   }
 
-  public void setText(String text) {
-    this.text = text;
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public Error message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Get message
+   * @return message
+  **/
+  @ApiModelProperty(example = "The authorization token provided is not valid", value = "")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public Error fields(String fields) {
+    this.fields = fields;
+    return this;
+  }
+
+   /**
+   * Get fields
+   * @return fields
+  **/
+  @ApiModelProperty(value = "")
+  public String getFields() {
+    return fields;
+  }
+
+  public void setFields(String fields) {
+    this.fields = fields;
   }
 
 
@@ -60,22 +101,26 @@ public class Text {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Text text = (Text) o;
-    return Objects.equals(this.text, text.text);
+    Error error = (Error) o;
+    return Objects.equals(this.code, error.code) &&
+        Objects.equals(this.message, error.message) &&
+        Objects.equals(this.fields, error.fields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text);
+    return Objects.hash(code, message, fields);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Text {\n");
+    sb.append("class Error {\n");
     
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
