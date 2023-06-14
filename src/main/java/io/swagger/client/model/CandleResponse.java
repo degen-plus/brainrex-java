@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -18,11 +17,12 @@ import java.util.Arrays;
 import io.swagger.client.model.OHCLV;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * CandleResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class CandleResponse extends ArrayList<OHCLV> {
 
   @Override
@@ -63,4 +63,3 @@ public class CandleResponse extends ArrayList<OHCLV> {
   }
 
 }
-

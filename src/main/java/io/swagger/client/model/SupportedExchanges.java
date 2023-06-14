@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * SupportedExchanges
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class SupportedExchanges {
   @SerializedName("bestCaseFee")
   private BigDecimal bestCaseFee = null;
@@ -48,7 +47,7 @@ public class SupportedExchanges {
    * Best fee scenario offered by the market
    * @return bestCaseFee
   **/
-  @ApiModelProperty(example = "2.0", value = "Best fee scenario offered by the market")
+  @Schema(example = "2", description = "Best fee scenario offered by the market")
   public BigDecimal getBestCaseFee() {
     return bestCaseFee;
   }
@@ -66,7 +65,7 @@ public class SupportedExchanges {
    * Limit depth to extract from the orderbook
    * @return worstCaseFee
   **/
-  @ApiModelProperty(example = "2.0", value = "Limit depth to extract from the orderbook")
+  @Schema(example = "2", description = "Limit depth to extract from the orderbook")
   public BigDecimal getWorstCaseFee() {
     return worstCaseFee;
   }
@@ -84,7 +83,7 @@ public class SupportedExchanges {
    * Name of the data format availables (standard)
    * @return exchange
   **/
-  @ApiModelProperty(example = "USD", value = "Name of the data format availables (standard)")
+  @Schema(example = "USD", description = "Name of the data format availables (standard)")
   public String getExchange() {
     return exchange;
   }
@@ -138,4 +137,3 @@ public class SupportedExchanges {
   }
 
 }
-

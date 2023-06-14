@@ -10,18 +10,18 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiException;
 import io.swagger.client.model.Text;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for LanguageApi
@@ -31,53 +31,49 @@ public class LanguageApiTest {
 
     private final LanguageApi api = new LanguageApi();
 
-    
     /**
      * Extracts known crypto entities like coin names, exchanges, media from text.
      *
      * The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void languageGetCryptoEntitiesTest() throws ApiException {
-        Text text = null;
-        api.languageGetCryptoEntities(text);
+    public void languageGetCryptoEntitiesTest() throws Exception {
+        Text body = null;
+        api.languageGetCryptoEntities(body);
 
         // TODO: test validations
     }
-    
     /**
      * Returns a -1 to 1 score, depending on positive/negative sentiment
      *
      * This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void languageGetGeneralSentimentTest() throws ApiException {
-        Text text = null;
-        String response = api.languageGetGeneralSentiment(text);
+    public void languageGetGeneralSentimentTest() throws Exception {
+        Text body = null;
+        String response = api.languageGetGeneralSentiment(body);
 
         // TODO: test validations
     }
-    
     /**
      * Sentiment analysis score using a model trained for buy signals.
      *
      * Gives a 0 to 1 score, depending on buy/sell sentiment
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void languageGetPriceSentimentTest() throws ApiException {
-        Text text = null;
-        String response = api.languageGetPriceSentiment(text);
+    public void languageGetPriceSentimentTest() throws Exception {
+        Text body = null;
+        String response = api.languageGetPriceSentiment(body);
 
         // TODO: test validations
     }
-    
 }

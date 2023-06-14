@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,14 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * Exchange
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class Exchange {
   @SerializedName("exchange")
   private String exchange = null;
@@ -41,7 +40,7 @@ public class Exchange {
    * Name of the digital asset exchange to get data from
    * @return exchange
   **/
-  @ApiModelProperty(example = "binance", value = "Name of the digital asset exchange to get data from")
+  @Schema(example = "binance", description = "Name of the digital asset exchange to get data from")
   public String getExchange() {
     return exchange;
   }
@@ -91,4 +90,3 @@ public class Exchange {
   }
 
 }
-

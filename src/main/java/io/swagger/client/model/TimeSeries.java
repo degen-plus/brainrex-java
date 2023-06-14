@@ -10,21 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.annotations.ApiModel;
 import io.swagger.client.model.PointTimeSeries;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Time series data points. Data points must be sorted by timestamp in ascending order and if there is duplicated timestamp, in both cases the API will not work.
  */
-@ApiModel(description = "Time series data points. Data points must be sorted by timestamp in ascending order and if there is duplicated timestamp, in both cases the API will not work.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+@Schema(description = "Time series data points. Data points must be sorted by timestamp in ascending order and if there is duplicated timestamp, in both cases the API will not work.")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class TimeSeries extends ArrayList<PointTimeSeries> {
 
   @Override
@@ -65,4 +64,3 @@ public class TimeSeries extends ArrayList<PointTimeSeries> {
   }
 
 }
-

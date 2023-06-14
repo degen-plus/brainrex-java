@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import org.threeten.bp.LocalDate;
-
 /**
  * OHCLV
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class OHCLV {
   @SerializedName("close")
   private Float close = null;
@@ -66,7 +65,7 @@ public class OHCLV {
    * Closing price quote of the time frame with two decimal points
    * @return close
   **/
-  @ApiModelProperty(example = "8612.83", value = "Closing price quote of the time frame with two decimal points")
+  @Schema(example = "8612.83", description = "Closing price quote of the time frame with two decimal points")
   public Float getClose() {
     return close;
   }
@@ -84,7 +83,7 @@ public class OHCLV {
    * Highest price of the time frame with two decimal points
    * @return high
   **/
-  @ApiModelProperty(example = "8627.58", value = "Highest price of the time frame with two decimal points")
+  @Schema(example = "8627.58", description = "Highest price of the time frame with two decimal points")
   public Float getHigh() {
     return high;
   }
@@ -102,7 +101,7 @@ public class OHCLV {
    * End date in YYYY/MM/DD
    * @return endDate
   **/
-  @ApiModelProperty(example = "2014/12/23", value = "End date in YYYY/MM/DD")
+  @Schema(description = "End date in YYYY/MM/DD")
   public LocalDate getEndDate() {
     return endDate;
   }
@@ -120,7 +119,7 @@ public class OHCLV {
    * Opening price quote of the time frame with two decimal points
    * @return open
   **/
-  @ApiModelProperty(example = "8148.72", value = "Opening price quote of the time frame with two decimal points")
+  @Schema(example = "8148.72", description = "Opening price quote of the time frame with two decimal points")
   public Float getOpen() {
     return open;
   }
@@ -138,7 +137,7 @@ public class OHCLV {
    * Timestamp of the beggining of the frame
    * @return time
   **/
-  @ApiModelProperty(example = "2019-03-27T12:00:00.000Z", value = "Timestamp of the beggining of the frame")
+  @Schema(description = "Timestamp of the beggining of the frame")
   public LocalDate getTime() {
     return time;
   }
@@ -156,7 +155,7 @@ public class OHCLV {
    * Volume of currency exchanged in the time frame with two decimal points
    * @return volume
   **/
-  @ApiModelProperty(example = "231.32", value = "Volume of currency exchanged in the time frame with two decimal points")
+  @Schema(example = "231.32", description = "Volume of currency exchanged in the time frame with two decimal points")
   public Float getVolume() {
     return volume;
   }
@@ -174,7 +173,7 @@ public class OHCLV {
    * Volume of currency exchanged in dollars the time frame with two decimal points
    * @return usdVolume
   **/
-  @ApiModelProperty(example = "1379412.9", value = "Volume of currency exchanged in dollars the time frame with two decimal points")
+  @Schema(example = "1379412.833069846", description = "Volume of currency exchanged in dollars the time frame with two decimal points")
   public Float getUsdVolume() {
     return usdVolume;
   }
@@ -192,7 +191,7 @@ public class OHCLV {
    * Volume of currency exchanged in dollars the time frame with two decimal points
    * @return btcVolume
   **/
-  @ApiModelProperty(example = "160.15672", value = "Volume of currency exchanged in dollars the time frame with two decimal points")
+  @Schema(example = "160.1567232566732", description = "Volume of currency exchanged in dollars the time frame with two decimal points")
   public Float getBtcVolume() {
     return btcVolume;
   }
@@ -210,7 +209,7 @@ public class OHCLV {
    * Volume of currency exchanged in dollars the time frame with two decimal points
    * @return quoteVolume
   **/
-  @ApiModelProperty(example = "1379412.9", value = "Volume of currency exchanged in dollars the time frame with two decimal points")
+  @Schema(example = "1379412.833069846", description = "Volume of currency exchanged in dollars the time frame with two decimal points")
   public Float getQuoteVolume() {
     return quoteVolume;
   }
@@ -276,4 +275,3 @@ public class OHCLV {
   }
 
 }
-

@@ -10,8 +10,7 @@
  * Do not edit the class manually.
  */
 
-
-package invalidPackageName;
+package io.swagger.client;
 
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.RequestBody;

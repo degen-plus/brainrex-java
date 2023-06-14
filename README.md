@@ -2,7 +2,7 @@
 
 BrainRex API
 - API version: 1.0.2
-  - Build date: 2020-01-07T13:51:54.821Z
+  - Build date: 2023-06-14T16:16:45.442340731Z[GMT]
 
 The Brainrex API is a collection of analytics tools and data integrations made for blockchain developers. In particular we offer Natural Language Processing and Anomaly detection algorithms that have been fine tune to understand text data and time series in the domain speficic setting of cryptocurrency and blockchain technology. This technology is intended to be use as building blocks to bigger applications, we offer examples on how to use them for Trading Backtesting and Smart Contract anomaly monitoring.
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.swagger</groupId>
   <artifactId>swagger-java-client</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.swagger:swagger-java-client:1.0.2"
+compile "io.swagger:swagger-java-client:1.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/swagger-java-client-1.0.2.jar`
+* `target/swagger-java-client-1.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -71,11 +71,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
-import invalidPackageName.*;
-import invalidPackageName.auth.*;
+import io.swagger.client.*;
+import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import brainrex.AnomalyApi;
+import io.swagger.client.api.AnomalyApi;
 
 import java.io.File;
 import java.util.*;
@@ -84,7 +83,7 @@ public class AnomalyApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
+
         // Configure API key authorization: APIKeyHeader
         ApiKeyAuth APIKeyHeader = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyHeader");
         APIKeyHeader.setApiKey("YOUR API KEY");
@@ -92,9 +91,9 @@ public class AnomalyApiExample {
         //APIKeyHeader.setApiKeyPrefix("Token");
 
         AnomalyApi apiInstance = new AnomalyApi();
-        TimeSeries request = new TimeSeries(); // TimeSeries | Time Series to be analyzed, with the following format.
+        List<PointTimeSeries> body = Arrays.asList(new PointTimeSeries()); // List<PointTimeSeries> | Time Series to be analyzed, with the following format.
         try {
-            List<Boolean> result = apiInstance.anomalyBatch(request);
+            List<Boolean> result = apiInstance.anomalyBatch(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnomalyApi#anomalyBatch");
@@ -102,12 +101,11 @@ public class AnomalyApiExample {
         }
     }
 }
-
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://0.0.0.0:8080*
+All URIs are relative to *https://api.brainrex.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -120,7 +118,6 @@ Class | Method | HTTP request | Description
 *LanguageApi* | [**languageGetCryptoEntities**](docs/LanguageApi.md#languageGetCryptoEntities) | **POST** /entity/get_crypto_entities | Extracts known crypto entities like coin names, exchanges, media from text.
 *LanguageApi* | [**languageGetGeneralSentiment**](docs/LanguageApi.md#languageGetGeneralSentiment) | **POST** /sentiment/get_general_sentiment | Returns a -1 to 1 score, depending on positive/negative sentiment
 *LanguageApi* | [**languageGetPriceSentiment**](docs/LanguageApi.md#languageGetPriceSentiment) | **POST** /language/get_price_sentiment | Sentiment analysis score using a model trained for buy signals.
-
 
 ## Documentation for Models
 
@@ -140,7 +137,6 @@ Class | Method | HTTP request | Description
  - [TickerResponseInner](docs/TickerResponseInner.md)
  - [TimeSeries](docs/TimeSeries.md)
 
-
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
@@ -156,6 +152,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

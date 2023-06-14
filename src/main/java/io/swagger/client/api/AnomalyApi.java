@@ -10,17 +10,16 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiCallback;
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.ApiResponse;
-import invalidPackageName.Configuration;
-import invalidPackageName.Pair;
-import invalidPackageName.ProgressRequestBody;
-import invalidPackageName.ProgressResponseBody;
+import io.swagger.client.ApiCallback;
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.ApiResponse;
+import io.swagger.client.Configuration;
+import io.swagger.client.Pair;
+import io.swagger.client.ProgressRequestBody;
+import io.swagger.client.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -28,7 +27,7 @@ import java.io.IOException;
 
 
 import io.swagger.client.model.Error;
-import io.swagger.client.model.TimeSeries;
+import io.swagger.client.model.PointTimeSeries;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -57,15 +56,15 @@ public class AnomalyApi {
 
     /**
      * Build call for anomalyBatch
-     * @param request Time Series to be analyzed, with the following format. (optional)
+     * @param body Time Series to be analyzed, with the following format. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call anomalyBatchCall(TimeSeries request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = request;
-
+    public com.squareup.okhttp.Call anomalyBatchCall(List<PointTimeSeries> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/anomaly/json/detect";
 
@@ -103,37 +102,40 @@ public class AnomalyApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call anomalyBatchValidateBeforeCall(TimeSeries request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call anomalyBatchValidateBeforeCall(List<PointTimeSeries> body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-
-        com.squareup.okhttp.Call call = anomalyBatchCall(request, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = anomalyBatchCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
      * The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param request Time Series to be analyzed, with the following format. (optional)
+     * @param body Time Series to be analyzed, with the following format. (optional)
      * @return List&lt;Boolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Boolean> anomalyBatch(TimeSeries request) throws ApiException {
-        ApiResponse<List<Boolean>> resp = anomalyBatchWithHttpInfo(request);
+    public List<Boolean> anomalyBatch(List<PointTimeSeries> body) throws ApiException {
+        ApiResponse<List<Boolean>> resp = anomalyBatchWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
      * The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param request Time Series to be analyzed, with the following format. (optional)
+     * @param body Time Series to be analyzed, with the following format. (optional)
      * @return ApiResponse&lt;List&lt;Boolean&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Boolean>> anomalyBatchWithHttpInfo(TimeSeries request) throws ApiException {
-        com.squareup.okhttp.Call call = anomalyBatchValidateBeforeCall(request, null, null);
+    public ApiResponse<List<Boolean>> anomalyBatchWithHttpInfo(List<PointTimeSeries> body) throws ApiException {
+        com.squareup.okhttp.Call call = anomalyBatchValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<List<Boolean>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -141,12 +143,12 @@ public class AnomalyApi {
     /**
      * Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input (asynchronously)
      * The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param request Time Series to be analyzed, with the following format. (optional)
+     * @param body Time Series to be analyzed, with the following format. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call anomalyBatchAsync(TimeSeries request, final ApiCallback<List<Boolean>> callback) throws ApiException {
+    public com.squareup.okhttp.Call anomalyBatchAsync(List<PointTimeSeries> body, final ApiCallback<List<Boolean>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -167,7 +169,7 @@ public class AnomalyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = anomalyBatchValidateBeforeCall(request, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = anomalyBatchValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Boolean>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

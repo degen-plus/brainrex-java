@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import org.threeten.bp.LocalDate;
-
 /**
  * TickerResponseInner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class TickerResponseInner {
   @SerializedName("lastUpdated")
   private LocalDate lastUpdated = null;
@@ -57,7 +56,7 @@ public class TickerResponseInner {
    * Closing price quote of the time frame with two decimal points
    * @return lastUpdated
   **/
-  @ApiModelProperty(example = "2019-03-27T12:00:00.000Z", value = "Closing price quote of the time frame with two decimal points")
+  @Schema(description = "Closing price quote of the time frame with two decimal points")
   public LocalDate getLastUpdated() {
     return lastUpdated;
   }
@@ -75,7 +74,7 @@ public class TickerResponseInner {
    * Highest price of the time frame with two decimal points
    * @return name
   **/
-  @ApiModelProperty(example = "Ethereum", value = "Highest price of the time frame with two decimal points")
+  @Schema(example = "Ethereum", description = "Highest price of the time frame with two decimal points")
   public String getName() {
     return name;
   }
@@ -93,7 +92,7 @@ public class TickerResponseInner {
    * Percetange change in the last 24 hours
    * @return percentChange24hUsd
   **/
-  @ApiModelProperty(example = "0.7300863", value = "Percetange change in the last 24 hours")
+  @Schema(example = "0.730086313989841", description = "Percetange change in the last 24 hours")
   public Float getPercentChange24hUsd() {
     return percentChange24hUsd;
   }
@@ -111,7 +110,7 @@ public class TickerResponseInner {
    * Opening price quote of the time frame with two decimal points
    * @return priceBtc
   **/
-  @ApiModelProperty(example = "0.0202135", value = "Opening price quote of the time frame with two decimal points")
+  @Schema(example = "0.0202135", description = "Opening price quote of the time frame with two decimal points")
   public Float getPriceBtc() {
     return priceBtc;
   }
@@ -129,7 +128,7 @@ public class TickerResponseInner {
    * Timestamp of the beggining of the frame
    * @return priceUsd
   **/
-  @ApiModelProperty(example = "148.255", value = "Timestamp of the beggining of the frame")
+  @Schema(example = "148.2550050312261", description = "Timestamp of the beggining of the frame")
   public Float getPriceUsd() {
     return priceUsd;
   }
@@ -147,7 +146,7 @@ public class TickerResponseInner {
    * Volume of currency exchanged in the time frame with two decimal points
    * @return symbol
   **/
-  @ApiModelProperty(example = "ETH", value = "Volume of currency exchanged in the time frame with two decimal points")
+  @Schema(example = "ETH", description = "Volume of currency exchanged in the time frame with two decimal points")
   public String getSymbol() {
     return symbol;
   }
@@ -207,4 +206,3 @@ public class TickerResponseInner {
   }
 
 }
-

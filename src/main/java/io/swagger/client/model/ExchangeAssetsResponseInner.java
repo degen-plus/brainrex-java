@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * ExchangeAssetsResponseInner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class ExchangeAssetsResponseInner {
   @SerializedName("name")
   private String name = null;
@@ -51,7 +50,7 @@ public class ExchangeAssetsResponseInner {
    * Highest price of the time frame with two decimal points
    * @return name
   **/
-  @ApiModelProperty(example = "Ethereum", value = "Highest price of the time frame with two decimal points")
+  @Schema(example = "Ethereum", description = "Highest price of the time frame with two decimal points")
   public String getName() {
     return name;
   }
@@ -69,7 +68,7 @@ public class ExchangeAssetsResponseInner {
    * Percetange change in the last 24 hours
    * @return id
   **/
-  @ApiModelProperty(example = "33.0", value = "Percetange change in the last 24 hours")
+  @Schema(example = "33", description = "Percetange change in the last 24 hours")
   public BigDecimal getId() {
     return id;
   }
@@ -87,7 +86,7 @@ public class ExchangeAssetsResponseInner {
    * Volume of currency exchanged in the time frame with two decimal points
    * @return tradinSym
   **/
-  @ApiModelProperty(example = "ETH", value = "Volume of currency exchanged in the time frame with two decimal points")
+  @Schema(example = "ETH", description = "Volume of currency exchanged in the time frame with two decimal points")
   public String getTradinSym() {
     return tradinSym;
   }
@@ -105,7 +104,7 @@ public class ExchangeAssetsResponseInner {
    * Volume of currency exchanged in the time frame with two decimal points
    * @return symbol
   **/
-  @ApiModelProperty(example = "ETH", value = "Volume of currency exchanged in the time frame with two decimal points")
+  @Schema(example = "ETH", description = "Volume of currency exchanged in the time frame with two decimal points")
   public String getSymbol() {
     return symbol;
   }
@@ -161,4 +160,3 @@ public class ExchangeAssetsResponseInner {
   }
 
 }
-

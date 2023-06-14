@@ -10,17 +10,16 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiCallback;
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.ApiResponse;
-import invalidPackageName.Configuration;
-import invalidPackageName.Pair;
-import invalidPackageName.ProgressRequestBody;
-import invalidPackageName.ProgressResponseBody;
+import io.swagger.client.ApiCallback;
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.ApiResponse;
+import io.swagger.client.Configuration;
+import io.swagger.client.Pair;
+import io.swagger.client.ProgressRequestBody;
+import io.swagger.client.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -63,15 +62,15 @@ public class IntegrationsApi {
 
     /**
      * Build call for cryptoGetCandleData
-     * @param candleRequest The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
+     * @param body The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetCandleDataCall(CandleRequest candleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = candleRequest;
-
+    public com.squareup.okhttp.Call cryptoGetCandleDataCall(CandleRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/crypto/get_candles";
 
@@ -109,42 +108,44 @@ public class IntegrationsApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cryptoGetCandleDataValidateBeforeCall(CandleRequest candleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'candleRequest' is set
-        if (candleRequest == null) {
-            throw new ApiException("Missing the required parameter 'candleRequest' when calling cryptoGetCandleData(Async)");
+    private com.squareup.okhttp.Call cryptoGetCandleDataValidateBeforeCall(CandleRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling cryptoGetCandleData(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = cryptoGetCandleDataCall(candleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetCandleDataCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Downloads candle format market data
      * Returns a list of candle data from specified market and data range
-     * @param candleRequest The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
+     * @param body The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
      * @return CandleResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CandleResponse cryptoGetCandleData(CandleRequest candleRequest) throws ApiException {
-        ApiResponse<CandleResponse> resp = cryptoGetCandleDataWithHttpInfo(candleRequest);
+    public CandleResponse cryptoGetCandleData(CandleRequest body) throws ApiException {
+        ApiResponse<CandleResponse> resp = cryptoGetCandleDataWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Downloads candle format market data
      * Returns a list of candle data from specified market and data range
-     * @param candleRequest The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
+     * @param body The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
      * @return ApiResponse&lt;CandleResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CandleResponse> cryptoGetCandleDataWithHttpInfo(CandleRequest candleRequest) throws ApiException {
-        com.squareup.okhttp.Call call = cryptoGetCandleDataValidateBeforeCall(candleRequest, null, null);
+    public ApiResponse<CandleResponse> cryptoGetCandleDataWithHttpInfo(CandleRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = cryptoGetCandleDataValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CandleResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -152,12 +153,12 @@ public class IntegrationsApi {
     /**
      * Downloads candle format market data (asynchronously)
      * Returns a list of candle data from specified market and data range
-     * @param candleRequest The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
+     * @param body The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetCandleDataAsync(CandleRequest candleRequest, final ApiCallback<CandleResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cryptoGetCandleDataAsync(CandleRequest body, final ApiCallback<CandleResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -178,22 +179,22 @@ public class IntegrationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cryptoGetCandleDataValidateBeforeCall(candleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetCandleDataValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CandleResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for cryptoGetExchangeAssets
-     * @param exchange Name of the cryptocurrency exchange (required)
+     * @param body Name of the cryptocurrency exchange (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetExchangeAssetsCall(Exchange exchange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = exchange;
-
+    public com.squareup.okhttp.Call cryptoGetExchangeAssetsCall(Exchange body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/crypto/get_exchange_assets";
 
@@ -231,42 +232,44 @@ public class IntegrationsApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cryptoGetExchangeAssetsValidateBeforeCall(Exchange exchange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'exchange' is set
-        if (exchange == null) {
-            throw new ApiException("Missing the required parameter 'exchange' when calling cryptoGetExchangeAssets(Async)");
+    private com.squareup.okhttp.Call cryptoGetExchangeAssetsValidateBeforeCall(Exchange body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling cryptoGetExchangeAssets(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsCall(exchange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Gets all coin pairs traded in specified exchange
      * This endpoint returns all the Available currency pairs
-     * @param exchange Name of the cryptocurrency exchange (required)
+     * @param body Name of the cryptocurrency exchange (required)
      * @return ExchangeAssetsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ExchangeAssetsResponse cryptoGetExchangeAssets(Exchange exchange) throws ApiException {
-        ApiResponse<ExchangeAssetsResponse> resp = cryptoGetExchangeAssetsWithHttpInfo(exchange);
+    public ExchangeAssetsResponse cryptoGetExchangeAssets(Exchange body) throws ApiException {
+        ApiResponse<ExchangeAssetsResponse> resp = cryptoGetExchangeAssetsWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Gets all coin pairs traded in specified exchange
      * This endpoint returns all the Available currency pairs
-     * @param exchange Name of the cryptocurrency exchange (required)
+     * @param body Name of the cryptocurrency exchange (required)
      * @return ApiResponse&lt;ExchangeAssetsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ExchangeAssetsResponse> cryptoGetExchangeAssetsWithHttpInfo(Exchange exchange) throws ApiException {
-        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsValidateBeforeCall(exchange, null, null);
+    public ApiResponse<ExchangeAssetsResponse> cryptoGetExchangeAssetsWithHttpInfo(Exchange body) throws ApiException {
+        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<ExchangeAssetsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -274,12 +277,12 @@ public class IntegrationsApi {
     /**
      * Gets all coin pairs traded in specified exchange (asynchronously)
      * This endpoint returns all the Available currency pairs
-     * @param exchange Name of the cryptocurrency exchange (required)
+     * @param body Name of the cryptocurrency exchange (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetExchangeAssetsAsync(Exchange exchange, final ApiCallback<ExchangeAssetsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cryptoGetExchangeAssetsAsync(Exchange body, final ApiCallback<ExchangeAssetsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,22 +303,22 @@ public class IntegrationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsValidateBeforeCall(exchange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetExchangeAssetsValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ExchangeAssetsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for cryptoGetOrderbooks
-     * @param orderbookRequest Exchange, trading pair and date rage for data (required)
+     * @param body Exchange, trading pair and date rage for data (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetOrderbooksCall(OrderbookRequest orderbookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = orderbookRequest;
-
+    public com.squareup.okhttp.Call cryptoGetOrderbooksCall(OrderbookRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/crypto/get_orderbooks";
 
@@ -353,42 +356,44 @@ public class IntegrationsApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cryptoGetOrderbooksValidateBeforeCall(OrderbookRequest orderbookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'orderbookRequest' is set
-        if (orderbookRequest == null) {
-            throw new ApiException("Missing the required parameter 'orderbookRequest' when calling cryptoGetOrderbooks(Async)");
+    private com.squareup.okhttp.Call cryptoGetOrderbooksValidateBeforeCall(OrderbookRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling cryptoGetOrderbooks(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = cryptoGetOrderbooksCall(orderbookRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetOrderbooksCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Returns the current state of the orderbook.
      * This endpoint returns the current state of the ordebook with a limit set by you. The maximun orderbook depth is 25.
-     * @param orderbookRequest Exchange, trading pair and date rage for data (required)
+     * @param body Exchange, trading pair and date rage for data (required)
      * @return OrderbookResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderbookResponse cryptoGetOrderbooks(OrderbookRequest orderbookRequest) throws ApiException {
-        ApiResponse<OrderbookResponse> resp = cryptoGetOrderbooksWithHttpInfo(orderbookRequest);
+    public OrderbookResponse cryptoGetOrderbooks(OrderbookRequest body) throws ApiException {
+        ApiResponse<OrderbookResponse> resp = cryptoGetOrderbooksWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Returns the current state of the orderbook.
      * This endpoint returns the current state of the ordebook with a limit set by you. The maximun orderbook depth is 25.
-     * @param orderbookRequest Exchange, trading pair and date rage for data (required)
+     * @param body Exchange, trading pair and date rage for data (required)
      * @return ApiResponse&lt;OrderbookResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderbookResponse> cryptoGetOrderbooksWithHttpInfo(OrderbookRequest orderbookRequest) throws ApiException {
-        com.squareup.okhttp.Call call = cryptoGetOrderbooksValidateBeforeCall(orderbookRequest, null, null);
+    public ApiResponse<OrderbookResponse> cryptoGetOrderbooksWithHttpInfo(OrderbookRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = cryptoGetOrderbooksValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<OrderbookResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -396,12 +401,12 @@ public class IntegrationsApi {
     /**
      * Returns the current state of the orderbook. (asynchronously)
      * This endpoint returns the current state of the ordebook with a limit set by you. The maximun orderbook depth is 25.
-     * @param orderbookRequest Exchange, trading pair and date rage for data (required)
+     * @param body Exchange, trading pair and date rage for data (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetOrderbooksAsync(OrderbookRequest orderbookRequest, final ApiCallback<OrderbookResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cryptoGetOrderbooksAsync(OrderbookRequest body, final ApiCallback<OrderbookResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -422,7 +427,7 @@ public class IntegrationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cryptoGetOrderbooksValidateBeforeCall(orderbookRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetOrderbooksValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderbookResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -436,7 +441,7 @@ public class IntegrationsApi {
      */
     public com.squareup.okhttp.Call cryptoGetSupportedExchangesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-
+        
         // create path and map variables
         String localVarPath = "/crypto/get_supported_exchanges";
 
@@ -454,7 +459,7 @@ public class IntegrationsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -474,14 +479,17 @@ public class IntegrationsApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call cryptoGetSupportedExchangesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-
         com.squareup.okhttp.Call call = cryptoGetSupportedExchangesCall(progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
@@ -542,15 +550,15 @@ public class IntegrationsApi {
     }
     /**
      * Build call for cryptoGetTicker
-     * @param exchange Get ticker data from specified crypto exchange (required)
+     * @param body Get ticker data from specified crypto exchange (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetTickerCall(Exchange exchange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = exchange;
-
+    public com.squareup.okhttp.Call cryptoGetTickerCall(Exchange body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/crypto/get_ticker";
 
@@ -588,42 +596,44 @@ public class IntegrationsApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cryptoGetTickerValidateBeforeCall(Exchange exchange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'exchange' is set
-        if (exchange == null) {
-            throw new ApiException("Missing the required parameter 'exchange' when calling cryptoGetTicker(Async)");
+    private com.squareup.okhttp.Call cryptoGetTickerValidateBeforeCall(Exchange body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling cryptoGetTicker(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = cryptoGetTickerCall(exchange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetTickerCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Downloads candle format market data
      * Returns a list of candle data from specified market and data range
-     * @param exchange Get ticker data from specified crypto exchange (required)
+     * @param body Get ticker data from specified crypto exchange (required)
      * @return TickerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TickerResponse cryptoGetTicker(Exchange exchange) throws ApiException {
-        ApiResponse<TickerResponse> resp = cryptoGetTickerWithHttpInfo(exchange);
+    public TickerResponse cryptoGetTicker(Exchange body) throws ApiException {
+        ApiResponse<TickerResponse> resp = cryptoGetTickerWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Downloads candle format market data
      * Returns a list of candle data from specified market and data range
-     * @param exchange Get ticker data from specified crypto exchange (required)
+     * @param body Get ticker data from specified crypto exchange (required)
      * @return ApiResponse&lt;TickerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TickerResponse> cryptoGetTickerWithHttpInfo(Exchange exchange) throws ApiException {
-        com.squareup.okhttp.Call call = cryptoGetTickerValidateBeforeCall(exchange, null, null);
+    public ApiResponse<TickerResponse> cryptoGetTickerWithHttpInfo(Exchange body) throws ApiException {
+        com.squareup.okhttp.Call call = cryptoGetTickerValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<TickerResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -631,12 +641,12 @@ public class IntegrationsApi {
     /**
      * Downloads candle format market data (asynchronously)
      * Returns a list of candle data from specified market and data range
-     * @param exchange Get ticker data from specified crypto exchange (required)
+     * @param body Get ticker data from specified crypto exchange (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cryptoGetTickerAsync(Exchange exchange, final ApiCallback<TickerResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cryptoGetTickerAsync(Exchange body, final ApiCallback<TickerResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -657,7 +667,7 @@ public class IntegrationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cryptoGetTickerValidateBeforeCall(exchange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cryptoGetTickerValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TickerResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

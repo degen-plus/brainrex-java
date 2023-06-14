@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * OrderbookResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class OrderbookResponse {
   @SerializedName("base_trading_symbol")
   private String baseTradingSymbol = null;
@@ -51,7 +50,7 @@ public class OrderbookResponse {
    * Name of the currency pair
    * @return baseTradingSymbol
   **/
-  @ApiModelProperty(example = "BTC", value = "Name of the currency pair")
+  @Schema(example = "BTC", description = "Name of the currency pair")
   public String getBaseTradingSymbol() {
     return baseTradingSymbol;
   }
@@ -69,7 +68,7 @@ public class OrderbookResponse {
    * Name of the exchange
    * @return exchange
   **/
-  @ApiModelProperty(example = "coinbasepro", value = "Name of the exchange")
+  @Schema(example = "coinbasepro", description = "Name of the exchange")
   public String getExchange() {
     return exchange;
   }
@@ -87,7 +86,7 @@ public class OrderbookResponse {
    * Limit depth to extract from the orderbook
    * @return limit
   **/
-  @ApiModelProperty(example = "2.0", value = "Limit depth to extract from the orderbook")
+  @Schema(example = "2", description = "Limit depth to extract from the orderbook")
   public BigDecimal getLimit() {
     return limit;
   }
@@ -105,7 +104,7 @@ public class OrderbookResponse {
    * Name of the data format availables (standard)
    * @return quoteTradingSymbol
   **/
-  @ApiModelProperty(example = "USD", value = "Name of the data format availables (standard)")
+  @Schema(example = "USD", description = "Name of the data format availables (standard)")
   public String getQuoteTradingSymbol() {
     return quoteTradingSymbol;
   }
@@ -161,4 +160,3 @@ public class OrderbookResponse {
   }
 
 }
-

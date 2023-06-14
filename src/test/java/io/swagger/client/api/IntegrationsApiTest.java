@@ -10,10 +10,8 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiException;
 import io.swagger.client.model.CandleRequest;
 import io.swagger.client.model.CandleResponse;
 import io.swagger.client.model.Exchange;
@@ -25,10 +23,12 @@ import io.swagger.client.model.TickerResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for IntegrationsApi
@@ -38,84 +38,78 @@ public class IntegrationsApiTest {
 
     private final IntegrationsApi api = new IntegrationsApi();
 
-    
     /**
      * Downloads candle format market data
      *
      * Returns a list of candle data from specified market and data range
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cryptoGetCandleDataTest() throws ApiException {
-        CandleRequest candleRequest = null;
-        CandleResponse response = api.cryptoGetCandleData(candleRequest);
+    public void cryptoGetCandleDataTest() throws Exception {
+        CandleRequest body = null;
+        CandleResponse response = api.cryptoGetCandleData(body);
 
         // TODO: test validations
     }
-    
     /**
      * Gets all coin pairs traded in specified exchange
      *
      * This endpoint returns all the Available currency pairs
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cryptoGetExchangeAssetsTest() throws ApiException {
-        Exchange exchange = null;
-        ExchangeAssetsResponse response = api.cryptoGetExchangeAssets(exchange);
+    public void cryptoGetExchangeAssetsTest() throws Exception {
+        Exchange body = null;
+        ExchangeAssetsResponse response = api.cryptoGetExchangeAssets(body);
 
         // TODO: test validations
     }
-    
     /**
      * Returns the current state of the orderbook.
      *
      * This endpoint returns the current state of the ordebook with a limit set by you. The maximun orderbook depth is 25.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cryptoGetOrderbooksTest() throws ApiException {
-        OrderbookRequest orderbookRequest = null;
-        OrderbookResponse response = api.cryptoGetOrderbooks(orderbookRequest);
+    public void cryptoGetOrderbooksTest() throws Exception {
+        OrderbookRequest body = null;
+        OrderbookResponse response = api.cryptoGetOrderbooks(body);
 
         // TODO: test validations
     }
-    
     /**
      * Gets all cryptocurrency exchanges supported by the Brainrex API
      *
      * Returns a list of candle data from specified market and data range
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cryptoGetSupportedExchangesTest() throws ApiException {
+    public void cryptoGetSupportedExchangesTest() throws Exception {
         SupportedExchanges response = api.cryptoGetSupportedExchanges();
 
         // TODO: test validations
     }
-    
     /**
      * Downloads candle format market data
      *
      * Returns a list of candle data from specified market and data range
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cryptoGetTickerTest() throws ApiException {
-        Exchange exchange = null;
-        TickerResponse response = api.cryptoGetTicker(exchange);
+    public void cryptoGetTickerTest() throws Exception {
+        Exchange body = null;
+        TickerResponse response = api.cryptoGetTicker(body);
 
         // TODO: test validations
     }
-    
 }

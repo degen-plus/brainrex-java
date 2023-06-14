@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,14 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * Error
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class Error {
   @SerializedName("code")
   private Integer code = null;
@@ -47,7 +46,7 @@ public class Error {
    * Get code
    * @return code
   **/
-  @ApiModelProperty(example = "401", value = "")
+  @Schema(example = "401", description = "")
   public Integer getCode() {
     return code;
   }
@@ -65,7 +64,7 @@ public class Error {
    * Get message
    * @return message
   **/
-  @ApiModelProperty(example = "The authorization token provided is not valid", value = "")
+  @Schema(example = "The authorization token provided is not valid", description = "")
   public String getMessage() {
     return message;
   }
@@ -83,7 +82,7 @@ public class Error {
    * Get fields
    * @return fields
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getFields() {
     return fields;
   }
@@ -137,4 +136,3 @@ public class Error {
   }
 
 }
-

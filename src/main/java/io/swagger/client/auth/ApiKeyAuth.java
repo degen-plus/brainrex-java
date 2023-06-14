@@ -10,15 +10,14 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.auth;
 
-package invalidPackageName.auth;
-
-import invalidPackageName.Pair;
+import io.swagger.client.Pair;
 
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

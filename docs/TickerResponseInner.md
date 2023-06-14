@@ -1,4 +1,3 @@
-
 # TickerResponseInner
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **priceBtc** | **Float** | Opening price quote of the time frame with two decimal points |  [optional]
 **priceUsd** | **Float** | Timestamp of the beggining of the frame |  [optional]
 **symbol** | **String** | Volume of currency exchanged in the time frame with two decimal points |  [optional]
-
-
-

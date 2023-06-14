@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package io.swagger.client.model;
 
 import java.util.Objects;
@@ -20,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import org.threeten.bp.OffsetDateTime;
-
 /**
  * PointTimeSeries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-07T13:51:54.821Z")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-14T16:16:45.442340731Z[GMT]")
+
 public class PointTimeSeries {
   @SerializedName("timestamp")
   private OffsetDateTime timestamp = null;
@@ -45,7 +44,7 @@ public class PointTimeSeries {
    * Timestamp in datetime format
    * @return timestamp
   **/
-  @ApiModelProperty(example = "2012-01-01T20:30:43Z", value = "Timestamp in datetime format")
+  @Schema(example = "2012-01-01T20:30:43Z", description = "Timestamp in datetime format")
   public OffsetDateTime getTimestamp() {
     return timestamp;
   }
@@ -63,7 +62,7 @@ public class PointTimeSeries {
    * Value of the time series point
    * @return value
   **/
-  @ApiModelProperty(example = "453.32", value = "Value of the time series point")
+  @Schema(example = "453.32", description = "Value of the time series point")
   public Float getValue() {
     return value;
   }
@@ -115,4 +114,3 @@ public class PointTimeSeries {
   }
 
 }
-

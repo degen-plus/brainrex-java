@@ -10,17 +10,16 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiCallback;
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.ApiResponse;
-import invalidPackageName.Configuration;
-import invalidPackageName.Pair;
-import invalidPackageName.ProgressRequestBody;
-import invalidPackageName.ProgressResponseBody;
+import io.swagger.client.ApiCallback;
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.ApiResponse;
+import io.swagger.client.Configuration;
+import io.swagger.client.Pair;
+import io.swagger.client.ProgressRequestBody;
+import io.swagger.client.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -56,15 +55,15 @@ public class LanguageApi {
 
     /**
      * Build call for languageGetCryptoEntities
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call languageGetCryptoEntitiesCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = text;
-
+    public com.squareup.okhttp.Call languageGetCryptoEntitiesCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/entity/get_crypto_entities";
 
@@ -76,7 +75,7 @@ public class LanguageApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+            
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -102,52 +101,54 @@ public class LanguageApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call languageGetCryptoEntitiesValidateBeforeCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'text' is set
-        if (text == null) {
-            throw new ApiException("Missing the required parameter 'text' when calling languageGetCryptoEntities(Async)");
+    private com.squareup.okhttp.Call languageGetCryptoEntitiesValidateBeforeCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling languageGetCryptoEntities(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = languageGetCryptoEntitiesCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetCryptoEntitiesCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Extracts known crypto entities like coin names, exchanges, media from text.
      * The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void languageGetCryptoEntities(Text text) throws ApiException {
-        languageGetCryptoEntitiesWithHttpInfo(text);
+    public void languageGetCryptoEntities(Text body) throws ApiException {
+        languageGetCryptoEntitiesWithHttpInfo(body);
     }
 
     /**
      * Extracts known crypto entities like coin names, exchanges, media from text.
      * The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> languageGetCryptoEntitiesWithHttpInfo(Text text) throws ApiException {
-        com.squareup.okhttp.Call call = languageGetCryptoEntitiesValidateBeforeCall(text, null, null);
+    public ApiResponse<Void> languageGetCryptoEntitiesWithHttpInfo(Text body) throws ApiException {
+        com.squareup.okhttp.Call call = languageGetCryptoEntitiesValidateBeforeCall(body, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Extracts known crypto entities like coin names, exchanges, media from text. (asynchronously)
      * The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call languageGetCryptoEntitiesAsync(Text text, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call languageGetCryptoEntitiesAsync(Text body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -168,21 +169,21 @@ public class LanguageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = languageGetCryptoEntitiesValidateBeforeCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetCryptoEntitiesValidateBeforeCall(body, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for languageGetGeneralSentiment
-     * @param text String of text to be analyze for general sentiment. (required)
+     * @param body String of text to be analyze for general sentiment. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call languageGetGeneralSentimentCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = text;
-
+    public com.squareup.okhttp.Call languageGetGeneralSentimentCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/sentiment/get_general_sentiment";
 
@@ -220,42 +221,44 @@ public class LanguageApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call languageGetGeneralSentimentValidateBeforeCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'text' is set
-        if (text == null) {
-            throw new ApiException("Missing the required parameter 'text' when calling languageGetGeneralSentiment(Async)");
+    private com.squareup.okhttp.Call languageGetGeneralSentimentValidateBeforeCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling languageGetGeneralSentiment(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = languageGetGeneralSentimentCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetGeneralSentimentCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Returns a -1 to 1 score, depending on positive/negative sentiment
      * This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
-     * @param text String of text to be analyze for general sentiment. (required)
+     * @param body String of text to be analyze for general sentiment. (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String languageGetGeneralSentiment(Text text) throws ApiException {
-        ApiResponse<String> resp = languageGetGeneralSentimentWithHttpInfo(text);
+    public String languageGetGeneralSentiment(Text body) throws ApiException {
+        ApiResponse<String> resp = languageGetGeneralSentimentWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Returns a -1 to 1 score, depending on positive/negative sentiment
      * This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
-     * @param text String of text to be analyze for general sentiment. (required)
+     * @param body String of text to be analyze for general sentiment. (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> languageGetGeneralSentimentWithHttpInfo(Text text) throws ApiException {
-        com.squareup.okhttp.Call call = languageGetGeneralSentimentValidateBeforeCall(text, null, null);
+    public ApiResponse<String> languageGetGeneralSentimentWithHttpInfo(Text body) throws ApiException {
+        com.squareup.okhttp.Call call = languageGetGeneralSentimentValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -263,12 +266,12 @@ public class LanguageApi {
     /**
      * Returns a -1 to 1 score, depending on positive/negative sentiment (asynchronously)
      * This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
-     * @param text String of text to be analyze for general sentiment. (required)
+     * @param body String of text to be analyze for general sentiment. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call languageGetGeneralSentimentAsync(Text text, final ApiCallback<String> callback) throws ApiException {
+    public com.squareup.okhttp.Call languageGetGeneralSentimentAsync(Text body, final ApiCallback<String> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -289,22 +292,22 @@ public class LanguageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = languageGetGeneralSentimentValidateBeforeCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetGeneralSentimentValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for languageGetPriceSentiment
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call languageGetPriceSentimentCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = text;
-
+    public com.squareup.okhttp.Call languageGetPriceSentimentCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
         // create path and map variables
         String localVarPath = "/language/get_price_sentiment";
 
@@ -342,42 +345,44 @@ public class LanguageApi {
         String[] localVarAuthNames = new String[] { "APIKeyHeader" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-
+    
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call languageGetPriceSentimentValidateBeforeCall(Text text, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'text' is set
-        if (text == null) {
-            throw new ApiException("Missing the required parameter 'text' when calling languageGetPriceSentiment(Async)");
+    private com.squareup.okhttp.Call languageGetPriceSentimentValidateBeforeCall(Text body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling languageGetPriceSentiment(Async)");
         }
         
-
-        com.squareup.okhttp.Call call = languageGetPriceSentimentCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetPriceSentimentCall(body, progressListener, progressRequestListener);
         return call;
 
+        
+        
+        
+        
     }
 
     /**
      * Sentiment analysis score using a model trained for buy signals.
      * Gives a 0 to 1 score, depending on buy/sell sentiment
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String languageGetPriceSentiment(Text text) throws ApiException {
-        ApiResponse<String> resp = languageGetPriceSentimentWithHttpInfo(text);
+    public String languageGetPriceSentiment(Text body) throws ApiException {
+        ApiResponse<String> resp = languageGetPriceSentimentWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Sentiment analysis score using a model trained for buy signals.
      * Gives a 0 to 1 score, depending on buy/sell sentiment
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> languageGetPriceSentimentWithHttpInfo(Text text) throws ApiException {
-        com.squareup.okhttp.Call call = languageGetPriceSentimentValidateBeforeCall(text, null, null);
+    public ApiResponse<String> languageGetPriceSentimentWithHttpInfo(Text body) throws ApiException {
+        com.squareup.okhttp.Call call = languageGetPriceSentimentValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -385,12 +390,12 @@ public class LanguageApi {
     /**
      * Sentiment analysis score using a model trained for buy signals. (asynchronously)
      * Gives a 0 to 1 score, depending on buy/sell sentiment
-     * @param text String of text to be analyze for investor sentiment. (required)
+     * @param body String of text to be analyze for investor sentiment. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call languageGetPriceSentimentAsync(Text text, final ApiCallback<String> callback) throws ApiException {
+    public com.squareup.okhttp.Call languageGetPriceSentimentAsync(Text body, final ApiCallback<String> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -411,7 +416,7 @@ public class LanguageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = languageGetPriceSentimentValidateBeforeCall(text, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = languageGetPriceSentimentValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

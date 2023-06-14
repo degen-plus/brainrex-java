@@ -1,6 +1,6 @@
 # IntegrationsApi
 
-All URIs are relative to *https://0.0.0.0:8080*
+All URIs are relative to *https://api.brainrex.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**cryptoGetSupportedExchanges**](IntegrationsApi.md#cryptoGetSupportedExchanges) | **GET** /crypto/get_supported_exchanges | Gets all cryptocurrency exchanges supported by the Brainrex API
 [**cryptoGetTicker**](IntegrationsApi.md#cryptoGetTicker) | **POST** /crypto/get_ticker | Downloads candle format market data
 
-
 <a name="cryptoGetCandleData"></a>
 # **cryptoGetCandleData**
-> CandleResponse cryptoGetCandleData(candleRequest)
+> CandleResponse cryptoGetCandleData(body)
 
 Downloads candle format market data
 
@@ -22,11 +21,11 @@ Returns a list of candle data from specified market and data range
 ### Example
 ```java
 // Import classes:
-//import invalidPackageName.ApiClient;
-//import invalidPackageName.ApiException;
-//import invalidPackageName.Configuration;
-//import invalidPackageName.auth.*;
-//import brainrex.IntegrationsApi;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -37,9 +36,9 @@ APIKeyHeader.setApiKey("YOUR API KEY");
 //APIKeyHeader.setApiKeyPrefix("Token");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
-CandleRequest candleRequest = new CandleRequest(); // CandleRequest | The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console
+CandleRequest body = new CandleRequest(); // CandleRequest | The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console
 try {
-    CandleResponse result = apiInstance.cryptoGetCandleData(candleRequest);
+    CandleResponse result = apiInstance.cryptoGetCandleData(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#cryptoGetCandleData");
@@ -51,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **candleRequest** | [**CandleRequest**](CandleRequest.md)| The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console |
+ **body** | [**CandleRequest**](CandleRequest.md)| The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console |
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="cryptoGetExchangeAssets"></a>
 # **cryptoGetExchangeAssets**
-> ExchangeAssetsResponse cryptoGetExchangeAssets(exchange)
+> ExchangeAssetsResponse cryptoGetExchangeAssets(body)
 
 Gets all coin pairs traded in specified exchange
 
@@ -77,11 +76,11 @@ This endpoint returns all the Available currency pairs
 ### Example
 ```java
 // Import classes:
-//import invalidPackageName.ApiClient;
-//import invalidPackageName.ApiException;
-//import invalidPackageName.Configuration;
-//import invalidPackageName.auth.*;
-//import brainrex.IntegrationsApi;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -92,9 +91,9 @@ APIKeyHeader.setApiKey("YOUR API KEY");
 //APIKeyHeader.setApiKeyPrefix("Token");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
-Exchange exchange = new Exchange(); // Exchange | Name of the cryptocurrency exchange
+Exchange body = new Exchange(); // Exchange | Name of the cryptocurrency exchange
 try {
-    ExchangeAssetsResponse result = apiInstance.cryptoGetExchangeAssets(exchange);
+    ExchangeAssetsResponse result = apiInstance.cryptoGetExchangeAssets(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#cryptoGetExchangeAssets");
@@ -106,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange** | [**Exchange**](Exchange.md)| Name of the cryptocurrency exchange |
+ **body** | [**Exchange**](Exchange.md)| Name of the cryptocurrency exchange |
 
 ### Return type
 
@@ -123,7 +122,7 @@ Name | Type | Description  | Notes
 
 <a name="cryptoGetOrderbooks"></a>
 # **cryptoGetOrderbooks**
-> OrderbookResponse cryptoGetOrderbooks(orderbookRequest)
+> OrderbookResponse cryptoGetOrderbooks(body)
 
 Returns the current state of the orderbook.
 
@@ -132,11 +131,11 @@ This endpoint returns the current state of the ordebook with a limit set by you.
 ### Example
 ```java
 // Import classes:
-//import invalidPackageName.ApiClient;
-//import invalidPackageName.ApiException;
-//import invalidPackageName.Configuration;
-//import invalidPackageName.auth.*;
-//import brainrex.IntegrationsApi;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -147,9 +146,9 @@ APIKeyHeader.setApiKey("YOUR API KEY");
 //APIKeyHeader.setApiKeyPrefix("Token");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
-OrderbookRequest orderbookRequest = new OrderbookRequest(); // OrderbookRequest | Exchange, trading pair and date rage for data
+OrderbookRequest body = new OrderbookRequest(); // OrderbookRequest | Exchange, trading pair and date rage for data
 try {
-    OrderbookResponse result = apiInstance.cryptoGetOrderbooks(orderbookRequest);
+    OrderbookResponse result = apiInstance.cryptoGetOrderbooks(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#cryptoGetOrderbooks");
@@ -161,7 +160,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderbookRequest** | [**OrderbookRequest**](OrderbookRequest.md)| Exchange, trading pair and date rage for data |
+ **body** | [**OrderbookRequest**](OrderbookRequest.md)| Exchange, trading pair and date rage for data |
 
 ### Return type
 
@@ -187,11 +186,11 @@ Returns a list of candle data from specified market and data range
 ### Example
 ```java
 // Import classes:
-//import invalidPackageName.ApiClient;
-//import invalidPackageName.ApiException;
-//import invalidPackageName.Configuration;
-//import invalidPackageName.auth.*;
-//import brainrex.IntegrationsApi;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -224,12 +223,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="cryptoGetTicker"></a>
 # **cryptoGetTicker**
-> TickerResponse cryptoGetTicker(exchange)
+> TickerResponse cryptoGetTicker(body)
 
 Downloads candle format market data
 
@@ -238,11 +237,11 @@ Returns a list of candle data from specified market and data range
 ### Example
 ```java
 // Import classes:
-//import invalidPackageName.ApiClient;
-//import invalidPackageName.ApiException;
-//import invalidPackageName.Configuration;
-//import invalidPackageName.auth.*;
-//import brainrex.IntegrationsApi;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -253,9 +252,9 @@ APIKeyHeader.setApiKey("YOUR API KEY");
 //APIKeyHeader.setApiKeyPrefix("Token");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
-Exchange exchange = new Exchange(); // Exchange | Get ticker data from specified crypto exchange
+Exchange body = new Exchange(); // Exchange | Get ticker data from specified crypto exchange
 try {
-    TickerResponse result = apiInstance.cryptoGetTicker(exchange);
+    TickerResponse result = apiInstance.cryptoGetTicker(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#cryptoGetTicker");
@@ -267,7 +266,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange** | [**Exchange**](Exchange.md)| Get ticker data from specified crypto exchange |
+ **body** | [**Exchange**](Exchange.md)| Get ticker data from specified crypto exchange |
 
 ### Return type
 

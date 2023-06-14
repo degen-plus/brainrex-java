@@ -10,19 +10,19 @@
  * Do not edit the class manually.
  */
 
+package io.swagger.client.api;
 
-package brainrex;
-
-import invalidPackageName.ApiException;
 import io.swagger.client.model.Error;
-import io.swagger.client.model.TimeSeries;
+import io.swagger.client.model.PointTimeSeries;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for AnomalyApi
@@ -32,21 +32,19 @@ public class AnomalyApiTest {
 
     private final AnomalyApi api = new AnomalyApi();
 
-    
     /**
      * Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
      *
      * The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. &lt;br&gt;&lt;br&gt; Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void anomalyBatchTest() throws ApiException {
-        TimeSeries request = null;
-        List<Boolean> response = api.anomalyBatch(request);
+    public void anomalyBatchTest() throws Exception {
+        List<PointTimeSeries> body = null;
+        List<Boolean> response = api.anomalyBatch(body);
 
         // TODO: test validations
     }
-    
 }
